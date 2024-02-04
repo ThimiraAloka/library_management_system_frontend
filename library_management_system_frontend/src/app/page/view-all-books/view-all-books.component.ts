@@ -23,9 +23,15 @@ export class ViewAllBooksComponent implements OnInit{
       this.loadBooks();
     }
     loadBooks(){
-      this.http.get('http://localhost:8080/book/get').subscribe((data)=>{
+      this.http.get(`http://localhost:8080/book/get`).subscribe((data)=>{
         this.bookList=data;
         console.log(this.bookList);
+      });
+    }
+
+    deleteBook(book:any){
+      this.http.delete(`http://localhost:8080/book/${book.id}`).subscribe(data=>{
+        console.log(data);
       });
     }
 
