@@ -41,7 +41,6 @@ export class ViewAllBooksComponent implements OnInit {
 
   setSelectedBook(book: any) {
     this.selectedBook = book;
-    co
   }
 
 
