@@ -26,7 +26,6 @@ export class ViewAllBooksComponent implements OnInit {
   loadBooks() {
     this.http.get(`http://localhost:8080/book/get`).subscribe((data) => {
       this.bookList = data;
-      console.log(this.bookList);
     });
   }
 
@@ -35,7 +34,6 @@ export class ViewAllBooksComponent implements OnInit {
   deleteBook() {
     let api = "http://localhost:8080/book/" + this.selectedBook.id;
     this.http.delete(api, { responseType: 'text' }).subscribe((response: string) => {
-      console.log(response);
       this.loadBooks();
       this.selectedBook = null;
     });
@@ -43,7 +41,7 @@ export class ViewAllBooksComponent implements OnInit {
 
   setSelectedBook(book: any) {
     this.selectedBook = book;
-    console.log("setSelectedBook" + book.id);
+    co
   }
 
 
